@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Uzdevums: ĶMI Kalkulators</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+      .container {
+        width: 80%;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      h1,
+      h2 {
+        color: #0056b3;
+      }
+      code {
+        background: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      pre {
+        background: #f4f4f4;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ķermeņa masas indeksa (ĶMI) kalkulators</h1>
+      <p>
+        Izveido vienkāršu "ĶMI kalkulatora" lietotni, izmantojot HTML un
+        JavaScript.
+      </p>
+      <h2>Instrukcija:</h2>
+      <ol>
+        <li>Izveido HTML failu ar šādiem elementiem:</li>
+        <ul>
+          <li>
+            Ievades lauks auguma garumam metros (<code>id="heightInput"</code>).
+          </li>
+          <li>
+            Ievades lauks svaram kilogramos (<code>id="weightInput"</code>).
+          </li>
+          <li>
+            Poga ar uzrakstu "Aprēķināt ĶMI" (<code>id="calculateBtn"</code>).
+          </li>
+          <li>
+            Paragrāfa tags rezultāta attēlošanai (<code>id="result"</code>).
+          </li>
+        </ul>
+        <li>Uzraksti JavaScript kodu, lai:</li>
+        <ul>
+          <li>
+            Lasītu vērtības no ievades laukiem un aprēķinātu ĶMI ar formulu:
+            <pre>ĶMI = svars / (augums * augums)</pre>
+          </li>
+          <li>
+            Noteiktu ĶMI kategoriju, izmantojot nosacījumus:
+            <ul>
+              <li><code>&lt;18.5</code>: Nepietiekams svars</li>
+              <li><code>18.5–24.9</code>: Normāls svars</li>
+              <li><code>25–29.9</code>: Liekais svars</li>
+              <li><code>&gt;=30</code>: Aptaukošanās</li>
+            </ul>
+          </li>
+          <li>
+            Attēlot rezultātu HTML elementā <code>id="result"</code>. Piem.,
+            <em>Jūsu ĶMI ir 20, kas atbilst kategorijai: Normāls svars.</em>
+          </li>
+        </ul>
+        <li>
+          Pārbaudi ievades laukus ar ciklu, lai pārliecinātos, ka tie nav tukši.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
