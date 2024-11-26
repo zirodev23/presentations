@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Calculator Uzdevums</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f9;
+      }
+      .slide {
+        display: none;
+      }
+      .slide.active {
+        display: block;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+      .navigation {
+        margin-top: 20px;
+      }
+      .button {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="slide-1" class="slide active">
+      <h1>Grade Calculator</h1>
+      <p>
+        Šajā uzdevumā jūs izveidosiet vienkāršu aplikāciju, kas aprēķina
+        studenta vērtējumu, pamatojoties uz iegūtajiem punktiem un maksimālo
+        punktu skaitu.
+      </p>
+      <div class="navigation">
+        <button class="button" onclick="nextSlide()">Nākamais</button>
+      </div>
+    </div>
+
+    <div id="slide-2" class="slide">
+      <h2>Instrukcijas</h2>
+      <ol>
+        <li>
+          Izveido HTML failu ar nosaukumu
+          <strong>grade_calculator.html</strong>.
+        </li>
+        <li>
+          HTML failā pievieno:
+          <ul>
+            <li>Virsrakstu: <em>Grade Calculator</em>.</li>
+            <li>
+              Ievades laukus:
+              <ul>
+                <li><strong>Vārds:</strong> tekstu ievades lauks.</li>
+                <li><strong>Iegūtie punkti:</strong> skaitļu ievades lauks.</li>
+                <li>
+                  <strong>Maksimālais punktu skaits:</strong> skaitļu ievades
+                  lauks.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Izkrītošo izvēlni, lai izvēlētos
+              <strong>Vērtēšanas shēmu</strong>:
+              <ul>
+                <li><em>Procentuālā vērtība (0-100)</em>.</li>
+                <li><em>Burtu vērtējums (A, B, C utt.)</em>.</li>
+              </ul>
+            </li>
+            <li>Pogu <strong>Aprēķināt vērtējumu</strong>.</li>
+            <li>Sekciju, kurā tiks parādīts aprēķinātais vērtējums.</li>
+          </ul>
+        </li>
+      </ol>
+      <div class="navigation">
+        <button class="button" onclick="prevSlide()">Atpakaļ</button>
+        <button class="button" onclick="nextSlide()">Nākamais</button>
+      </div>
+    </div>
+
+    <div id="slide-3" class="slide">
+      <h2>CSS un funkcionalitāte</h2>
+      <p>1. Pievieno ārējo CSS failu, kas stilizē formu:</p>
+      <ul>
+        <li>Forma jācentrē ekrānā un jānosaka konkrēts platums.</li>
+        <li>
+          Ievades lauki aizņem visu formas platumu, bet nepārsniedz tās robežas.
+        </li>
+      </ul>
+      <p>2. Ar JavaScript pievieno šādu funkcionalitāti:</p>
+      <ul>
+        <li>
+          Izmanto <code>addEventListener</code>, lai aprēķinātu vērtējumu, kad
+          tiek nospiesta poga.
+        </li>
+        <li>
+          Ja izvēlēta procentuālā vērtēšana:
+          <ul>
+            <li>
+              Izrēķini:
+              <code>(Iegūtie punkti / Maksimālais punktu skaits) * 100</code>.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Ja izvēlēts burtu vērtējums:
+          <ul>
+            <li>90-100: A</li>
+            <li>80-89: B</li>
+            <li>70-79: C</li>
+            <li>60-69: D</li>
+            <li>Zem 60: F</li>
+          </ul>
+        </li>
+        <li>Parādi rezultātu lietotājam.</li>
+      </ul>
+      <div class="navigation">
+        <button class="button" onclick="prevSlide()">Atpakaļ</button>
+        <button class="button" onclick="nextSlide()">Nākamais</button>
+      </div>
+    </div>
+
+    <div id="slide-4" class="slide">
+      <h2>Validācija</h2>
+      <p>Nodrošini, ka:</p>
+      <ul>
+        <li>Iegūtie punkti nepārsniedz maksimālos punktus.</li>
+        <li>Ievades lauki nav tukši un satur tikai pareizus datus.</li>
+      </ul>
+      <div class="navigation">
+        <button class="button" onclick="prevSlide()">Atpakaļ</button>
+      </div>
+    </div>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+      }
+
+      function nextSlide() {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          showSlide(currentSlide);
+        }
+      }
+
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          showSlide(currentSlide);
+        }
+      }
+    </script>
+  </body>
+</html>
